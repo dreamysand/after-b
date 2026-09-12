@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <math.h>
+#define POWER_3(x) (x*x*x)
 
 int main() {
     const int MIN = 0;
     const int MAX = 999;
 
-    int theNumber;
-    int digit;
-    int total = 0;
+    int theNumber, numberCopy, digit, total;
+    
+    total = 0;
 
     do {
         scanf("%d", &theNumber);
@@ -15,14 +15,14 @@ int main() {
         if (theNumber < MIN || theNumber > MAX) {
             printf("Angka yang dimasukkan haruslah dalam range %d sampai %d\n", MIN, MAX);
         }
-
     } while (theNumber < MIN || theNumber > MAX);
 
-    int numberCopy = theNumber;
-
-    while (numberCopy > 0) {
+    numberCopy = theNumber;
+    
+    while (numberCopy > 0)
+    {
         digit = numberCopy % 10;
-        total += pow(digit, 3);
+        total += POWER_3(digit);
         numberCopy /= 10;
     }
 
@@ -31,5 +31,5 @@ int main() {
     } else {
         printf("Bukan Merupakan Bilangan Armstrong\n");
     }
-    return 0;
+    
 }
