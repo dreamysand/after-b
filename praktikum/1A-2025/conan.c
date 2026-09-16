@@ -49,7 +49,7 @@ int main() {
     // Contoh Keluaran #2
     // RAN KECEWA
 
-    int x = 0 , y = 0, N = 0, S = 0, E = 0, W = 0, B, s, dx, dy; 
+    int N = 0, S = 0, E = 0, W = 0, B, s, dx, dy; 
     char d;
 
     scanf("%d", &B);
