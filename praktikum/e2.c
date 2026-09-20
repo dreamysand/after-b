@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define IS_LOWERCASE(a) a >= 97 && a < 123 ? 1 : 0
-#define IS_UPPERCASE(a) a >= 65 && a < 91 ? 1 : 0
+#define IS_LOWERCASE(a) ((a) >= 'a' && (a) <= 'z')
+#define IS_UPPERCASE(a) ((a) >= 'A' && (a) <= 'Z')
 
 int main() {
     char a, b, op;
@@ -38,20 +38,22 @@ int main() {
         result = n1 * n2;
         break;
     case '/':
+        if (n2 == 0) return 0;
         result = n1 / n2;
         break;
     case '%':
+        if (n2 == 0) return 0;
         result = n1 % n2;
         break;
     default:
         return 0;
     }
 
-    if (result > 52) {
-        result -= 52;
-    } else if (result <= 0) {
+    result = (result - 1) % 52;
+    if (result < 0) {
         result += 52;
     }
+    result += 1;
 
     int final_answer = 0;
 

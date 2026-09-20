@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int N;
+    long long N;
 
-    scanf("%d", N);
-    if ()
+    scanf("%lld", &N);
+    
+    printf("%lld", (long long)sqrt(N));
 }
