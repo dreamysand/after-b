@@ -6,5 +6,6 @@ int main() {
 
     scanf("%lld", &N);
     
+    
     printf("%lld", (long long)sqrt(N));
 }
